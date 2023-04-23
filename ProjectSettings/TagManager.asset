@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Impact
+  - Bullet
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
         if(health1 <=0)
         {
             Die();
+            Score.instance.ScoreUpdate();
         }
     }
 
