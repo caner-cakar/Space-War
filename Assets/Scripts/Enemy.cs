@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         }
-        else
+        else if(coll.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }

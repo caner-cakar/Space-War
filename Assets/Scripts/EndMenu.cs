@@ -14,6 +14,6 @@ public class EndMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     public void Start() 
     {
-        text.text ="Your Score: "+ Score.instance.score;
+        text.text ="Your Score: "+ Score.instance.score.ToString();
     }
 }
