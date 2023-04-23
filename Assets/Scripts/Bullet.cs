@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(playerDamage);
         }
         Instantiate(impactEffect,transform.position,transform.rotation);
+        Destroy(GameObject.FindGameObjectWithTag("Impact"));
         Destroy(gameObject);
     }
 }
