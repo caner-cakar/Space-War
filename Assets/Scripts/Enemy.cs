@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int health1 = 10;
-    
+
+    private float downSpeed = 2f;
+    private Rigidbody2D rb;
 
     public void TakeDamage(int damage)
     {
@@ -19,5 +21,27 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+    }
+    private void Start() 
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update() 
+    {
+        rb.velocity = new Vector2(rb.velocity.x, -1* downSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll) 
+    {
+        if(coll.gameObject.CompareTag("Player"))
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
