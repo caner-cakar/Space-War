@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     public static Score instance;
     [SerializeField] TextMeshProUGUI text;
-    private int score;
+    public int score;
     void Awake() 
     {
         instance = this;
